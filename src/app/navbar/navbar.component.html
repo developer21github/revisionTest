@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-light pl-5 pr-5" [ngClass]="active === '/' ? 'transparent' : 'bg-light'">
+  <a routerLink="/dashboard"><img class="navbar-brand" width="160px;" src="../../assets/images/logo.png" alt="friends cast" *ngIf="active !== '/'"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active" *ngIf="user">
+        <a class="nav-link" routerLink="/podcast">Podcasts</a>
+      </li>
+      <li class="nav-item" *ngIf="!user">
+        <a class="nav-link" >Pro</a>
+      </li>
+      <li class="nav-item" *ngIf="user">
+        <a class="nav-link" >Create a Podcast +</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav">
+      <li class="nav-item" *ngIf="!user">
+        <a class="nav-link" data-toggle="modal" (click)="btnSignUpClick()">Sign Up</a>
+      </li>
+      <li class="nav-item" *ngIf="!user">
+        <a class="nav-link" data-toggle="modal" (click)="btnLoginClick()">Login</a>
+      </li>
+      <li class="nav-item dropdown" *ngIf="user">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Account
+        </a>
+        <div class="dropdown-menu" style="left: auto; right: 0px;" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" (click)="btnEditProfileClick()">Edit Profile</a>
+          <a class="dropdown-item" routerLink="/setting">Settings</a>
+          <a class="dropdown-item" (click)="signOut()">Sign Out</a>
+        </div>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<app-auth-modal></app-auth-modal>

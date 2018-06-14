@@ -1,0 +1,79 @@
+<div class="modal" id="loginModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        FriendsCast Login
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="loginEmail">Email address</label>
+          <input type="email" class="form-control" id="loginEmail" [(ngModel)]="user.email" placeholder="Enter email">
+        </div>
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <input type="password" class="form-control" id="loginPassword" [(ngModel)]="user.password" placeholder="Password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="btnLoginClick($event)" >Login</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="signupModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: none;">
+        FriendsCast Signup
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label for="signupEmail">Email address</label>
+          <input type="email" class="form-control" id="signupEmail" [(ngModel)]="user.email" aria-describedby="emailHelp" placeholder="Enter email">
+          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+          <label for="signupPassword">Password</label>
+          <input type="password" class="form-control" id="signupPassword" [(ngModel)]="user.password" placeholder="Password">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="btnRegisterClick($event)">Signup</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="profileModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        FriendsCast
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <div class="profile-image-ctn" (click)="btnChangeProfileClick()">
+            <img *ngIf="!profile.thumb" src="../../assets/images/default-avatar.jpg">
+            <img *ngIf="profile.thumb" src="{{profile.thumb}}">
+            <input style="display: none;" type="file" id="profileImageInput" class="hidden" (change)="onFileChange($event)">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="userFirstName">First Name</label>
+          <input id="userFirstName" type="text" class="form-control" [(ngModel)]="profile.firstName" placeholder="First Name">
+        </div>
+        <div class="form-group">
+          <label for="userLastName">Last Name</label>
+          <input id="userLastName" type="text" class="form-control" [(ngModel)]="profile.lastName" placeholder="Last Name">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="btnSaveProfileClick($event)" >Save</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,27 @@
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
+  padding-top: 0;
+}
+.profile-image-ctn {
+  display: table;
+  width: 100%;
+  text-align: center;
+}
+.profile-image-ctn img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+
+@media (min-width: 768px) {
+  #signupModal .modal-dialog,
+  #loginModal .modal-dialog,
+  #profileModal .modal-dialog {
+    width: 350px;
+  }
+}

@@ -1,0 +1,47 @@
+.logo {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 8px;
+}
+.name_prod{
+  display: inline-block;
+  vertical-align: top;
+}
+.name_prod p.p_name {
+  font-size: 20px;
+  padding: 0;
+  margin: 0;
+  font-weight: bold;
+}
+.pl_btn{
+  width: 100%;
+  padding-right: 3%;
+}
+.pl_btn a{
+  display: block;
+  width: 50px;
+  text-align: center;
+  transition: all 0.3s ease;
+  color: #000000;
+  font-size: 26px;
+  border: 1px solid #000;
+  float: right;
+
+}
+@media screen and (max-width: 767px) {
+  .audio-bar-ctn{
+    position: relative;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .audio-bar-ctn{
+    position: relative;
+  }
+}
+@media (max-width: 500px) {
+  .audio-bar-ctn[_ngcontent-uoh-7] .audio-bar[_ngcontent-uoh-7] {
+  }
+}
+.product_img img{
+  width: 100%;
+}

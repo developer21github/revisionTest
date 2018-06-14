@@ -1,0 +1,5 @@
+<div [ngClass]="route === '/' ? 'landing': ''">
+  <app-navbar #navbar [active]="route" [user]="user"></app-navbar>
+
+  <router-outlet></router-outlet>
+</div>
